@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>AURA LOCK</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-logo">AURA LOCK</div>
+  <div class="loading-bar"><div class="loading-progress" id="loadingProgress"></div></div>
+  <div class="loading-text" id="loadingText">Đang khởi tạo...</div>
+</div>
+
+<!-- Minimized Floating Icon -->
+<div class="minimized-icon" id="minimizedIcon">
+  <span>AURA</span>
+</div>
+
+<!-- Main Panel -->
+<div class="panel" id="mainPanel">
+
+  <!-- Resize Handles -->
+  <div class="resize-handle resize-br" data-dir="br"></div>
+  <div class="resize-handle resize-bl" data-dir="bl"></div>
+  <div class="resize-handle resize-tr" data-dir="tr"></div>
+  <div class="resize-handle resize-tl" data-dir="tl"></div>
+  <div class="resize-handle resize-r" data-dir="r"></div>
+  <div class="resize-handle resize-l" data-dir="l"></div>
+  <div class="resize-handle resize-b" data-dir="b"></div>
+  <div class="resize-handle resize-t" data-dir="t"></div>
+
+  <!-- Header -->
+  <div class="header" id="dragHeader">
+    <div class="banner">
+      <div class="banner-line"></div>
+      <div class="banner-dot dot-1"></div>
+      <div class="banner-dot dot-2"></div>
+      <div class="banner-dot dot-3"></div>
+    </div>
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-text">AURA LOCK</span>
+        <span class="logo-badge">PRO</span>
+      </div>
+      <div class="header-controls">
+        <button class="ctrl-btn" id="minimizeBtn" title="Thu nhỏ">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M19 13H5v-2h14v2z"/>
+          </svg>
+        </button>
+        <button class="ctrl-btn" id="closeBtn" title="Đóng">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div class="status-bar">
+    <div class="status-item">
+      <span class="status-dot" id="statusDot"></span>
+      <span class="status-text">Trạng thái: <b id="statusText">Online</b></span>
+    </div>
+    <div class="status-time">Thời gian: <b id="statusTime">00:00:00</b></div>
+  </div>
+
+  <!-- Feature List -->
+  <div class="feature-list" id="featureList">
+
+    <div class="feature-item active" data-id="antiband">
+      <div class="feature-icon">✓</div>
+      <div class="feature-name">| Antiband Novebom |</div>
+      <div class="feature-timer" data-timer="antiband">00:00:00</div>
+    </div>
+
+    <div class="feature-item" data-id="giamrung">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| Giảm Thiểu Rung Tâm |</div>
+      <div class="feature-timer" data-timer="giamrung">--:--:--</div>
+    </div>
+
+    <div class="feature-item" data-id="fixlag">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| Fix Lag Máy |</div>
+      <div class="feature-timer" data-timer="fixlag">--:--:--</div>
+    </div>
+
+    <div class="feature-item" data-id="bufffps">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| Buff Fps Game |</div>
+      <div class="feature-timer" data-timer="bufffps">--:--:--</div>
+    </div>
+
+    <div class="feature-item" data-id="aimlock">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| Aimlock Gamer 85% |</div>
+      <div class="feature-timer" data-timer="aimlock">--:--:--</div>
+    </div>
+
+    <div class="feature-item" data-id="nhetamv1">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| Nhẹ Tâm V1 |</div>
+      <div class="feature-timer" data-timer="nhetamv1">--:--:--</div>
+    </div>
+
+    <div class="feature-item" data-id="hesotv2">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| Hesot V2 Antiband |</div>
+      <div class="feature-timer" data-timer="hesotv2">--:--:--</div>
+    </div>
+
+    <div class="feature-item" data-id="aimhead">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| Aim Head Max |</div>
+      <div class="feature-timer" data-timer="aimhead">--:--:--</div>
+    </div>
+
+    <div class="feature-item" data-id="dpi">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| DPI |</div>
+      <div class="feature-timer" data-timer="dpi">--:--:--</div>
+    </div>
+
+    <div class="feature-item" data-id="skillaim">
+      <div class="feature-icon"></div>
+      <div class="feature-name">| AURA LOCK |</div>
+      <div class="feature-timer" data-timer="skillaim">--:--:--</div>
+    </div>
+
+  </div>
+
+  <!-- Floating Button -->
+  <div class="float-btn" id="floatBtn">
+    <div class="float-btn-inner"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>AURA LOCK © 2026 • BY MINH QUAN</span>
+  </div>
+
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">ACTIVATED</div>
+
+<script src="script.js"></script>
+</body>
+</html>
